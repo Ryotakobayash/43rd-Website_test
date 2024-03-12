@@ -24,5 +24,5 @@ document.addEventListener("DOMContentLoaded", function() {
     loadNewImage();
 
     // Change image every 5 seconds
-    setInterval(loadNewImage, 5000);
+    setInterval(loadNewImage, 3000);
 });
