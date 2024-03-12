@@ -10,10 +10,18 @@ document.addEventListener("DOMContentLoaded", function() {
         return Math.floor(Math.random() * totalImages) + 1;
     }
 
+    // 画像と関連付けられたURLのマッピングオブジェクト
+    const imageUrls = {
+        1: "https://example.com/image1",
+        2: "https://example.com/image2",
+        3: "https://example.com/image3"
+        // 画像の数が増える場合は、ここに追加してください
+    };
+
     // Function to load a new image
     function loadNewImage() {
         adImage.src = imageFolderPath + `Img${currentImageIndex}.png`;
-        adLink.href = `https://example.com/${currentImageIndex}`; // Replace example.com with actual URL
+        adLink.href = imageUrls[currentImageIndex];
         currentImageIndex++;
         if (currentImageIndex > totalImages) {
             currentImageIndex = 1;
@@ -24,5 +32,5 @@ document.addEventListener("DOMContentLoaded", function() {
     loadNewImage();
 
     // Change image every 5 seconds
-    setInterval(loadNewImage, 3000);
+    setInterval(loadNewImage, 5000);
 });
