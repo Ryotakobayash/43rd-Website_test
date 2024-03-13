@@ -20,12 +20,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to load a new image
     function loadNewImage() {
-        adImage.src = imageFolderPath + `Img${currentImageIndex}.png`;
+        const imageExtension = getImageExtension(); // 画像の拡張子を取得
+        adImage.src = imageFolderPath + `Img${currentImageIndex}.${imageExtension}`;
         adLink.href = imageUrls[currentImageIndex];
         currentImageIndex++;
         if (currentImageIndex > totalImages) {
             currentImageIndex = 1;
         }
+    }
+
+    // ランダムな拡張子を返す関数
+    function getImageExtension() {
+        const extensions = ["png", "jpg", "jpeg", "gif"]; // 使用可能な拡張子を指定
+        return extensions[Math.floor(Math.random() * extensions.length)];
     }
 
     // Load a new image on page load
