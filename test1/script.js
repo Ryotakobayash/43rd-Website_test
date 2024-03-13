@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // 画像のインデックスに対応する拡張子を定義
     const imageExtensions = {
         1: "png",
-        2: "jpg",
-        3: "gif"
+        2: "gif",
+        3: "png"
     };
 
     function loadNewImage() {
